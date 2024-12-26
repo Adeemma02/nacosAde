@@ -739,7 +739,7 @@ grid-gap: 30px;
     }
 }
 @media(max-width: 520px){
-    ul{
+  header nav ul{
         display: flex;
         list-style: none;
         position: fixed;
@@ -753,11 +753,17 @@ grid-gap: 30px;
         align-items: center;
         gap: 40px;
         transition: right 1.5s ease-in-out;
+        overflow: hidden;
     }
-    ul.active{
+   .active{
+    overflow: hidden;
+   }
+    nav ul.active{
        right: 0;
+       overflow: hidden;
+       z-index: 999;
     }
-    ul li{
+    nav ul li{
         font-size: 30px;
         cursor: pointer;
         color: #020202;
@@ -765,34 +771,34 @@ grid-gap: 30px;
         list-style: none;
         transform: translateX(400px);
     }
-    ul.active li{
+    nav ul.active li{
         animation: slide-right 2s forwards;
         transition: color 1s ease-in-out;
     }
-    ul.active li:nth-child(1){
+    nav ul.active li:nth-child(1){
         animation-delay: 0.1s;
     }
-    ul.active li:nth-child(2){
+    nav ul.active li:nth-child(2){
         animation-delay: 0.3s;
     }
-    ul.active li:nth-child(3){
+    nav ul.active li:nth-child(3){
         animation-delay: 0.5s;
     }
-    ul.active li:nth-child(4){
+    nav ul.active li:nth-child(4){
         animation-delay: 0.7s;
     }
-    ul.active li:nth-child(5){
+    nav ul.active li:nth-child(5){
         animation-delay: 0.9s;
     }
-    ul.active li:nth-child(6){
+    nav ul.active li:nth-child(6){
         animation-delay: 1.1s;
     }
-    ul.active li:hover{
+    nav ul.active li:hover{
         color: red;
     }
-    footer{
+    /* footer{
         height: fit-content;
-    }
+    } */
     .menu-box{
         display: flex;
         flex-direction: column;
@@ -800,21 +806,28 @@ grid-gap: 30px;
         height: fit-content;
         padding: 0 20px;
         border-radius: 50px;
-        z-index: 900;
+        height: 24px;
+        z-index: 999;
     }
-    .hamburger{
+    .menu-box span{
         background-color: #f2f2f2;
         height: 4px;
         width: 30px;
         cursor: pointer;
         border-radius: 10px;
         transition: all 0.7s ease-in-out;
+        z-index: 999;
     }
-    .menu-box.active span:nth-child(1){
+    .menu-box.active{
+        position: fixed;
+        top: 8px;
+        right: 0px;
+    }
+    .menu-box.active span:nth-child(1) {
         transform: rotate(45deg) translate(6.5px, 6.5px);
     }
     .menu-box.active span:nth-child(2){
-       opacity: 0; transform: translateX(60px);
+       opacity: 0; transform: translateX(60px); 
     }
     .menu-box.active span:nth-child(3){
         transform: rotate(-45deg) translate(6.5px, -6.5px);
